@@ -14,11 +14,13 @@ export function GetTagColor(tag, tagColorsEnabled) {
       case "[-]":
         return "violet";
       case "[666]":
-        return "lightgreen";
+        return "darkgreen";
       case "[T3M]":
         return "orange";      
       case "[X/0]":
         return "yellow";
+      case "[8]":
+        return "lightgreen";
       // Ajoutez ici d'autres cas pour d'autres tags
       default:
         return "white";

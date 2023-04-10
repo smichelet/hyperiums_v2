@@ -16,7 +16,7 @@ export function RenderGrid(data, maxCoord, tagColorsEnabled, handlePlanetClick) 
               const tagColor = GetTagColor(planet.tag, tagColorsEnabled);
               return(
                 <div key={planet.name} onClick={() => handlePlanetClick(planet)} style={{ backgroundColor: tagColor }}>
-                  <p style={{ marginBlockStart: "0px", marginBlockEnd: "0px" }}>{planet.name}</p>
+                  <span style={{ whiteSpace: "nowrap", marginBlockStart: "0px", marginBlockEnd: "0px" }}>{planet.name}</span>
                 </div>
               );
             })}

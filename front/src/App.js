@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { AddPlanetsAlliance } from './components/addPlanetsAlliance';
 import { FormatData } from './components/formatData';
 import { FormatToCSV } from './components/formatToCSV';
 import { MaxCoord } from './components/maxCoord';
@@ -12,22 +13,35 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import './App.css'
 
 function App() {
-  // Définition de variables / fonctions nécessaires
-  const fileName = './planetsFull.txt';
+  // Définition des variables pour sélectionner les fichiers locaux en tant que source de données
+  const fileNamePlanets = './planets.txt';
+  const fileNamePlanetsAlliance = './planetsAlliance.txt';
+
+  // Définition d'une variable pour la fonction d'affichage d'une couleur de background pour les tags
   const [tagColorsEnabled, setTagColorsEnabled] = useState(true);
+  
+  // Définition d'une variable pour la fonction d'affichage des données d'une planète sélectionnée
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   function handlePlanetClick(planetData) {
     setSelectedPlanet(planetData);
   }
 
-  // Appel de la fonction pour lire le fichier local  
-  const file = ReadFile(fileName);
+  // Appel de la fonction pour lire les fichiers locaux
+  const filePlanets = ReadFile(fileNamePlanets);
+  const filePlanetsAlliance = ReadFile(fileNamePlanetsAlliance);
+
   // Appel de la fonction pour formatter le fichier au format CSV
-  const csvFile = FormatToCSV(file);
+  const csvFilePlanets = FormatToCSV(filePlanets);
+
+  // Appel de la fonction qui ajoute le tag de notre alliance sur nos planètes
+  const csvFilePlanetsWithAlliance = AddPlanetsAlliance(filePlanetsAlliance, csvFilePlanets);
+
   // Appel de la fonction qui structure les données
-  const data = FormatData(csvFile);
+  const data = FormatData(csvFilePlanetsWithAlliance);
+
   // Appel de la fonction pour avoir la coordonnée maximale
-  const maxCoord = MaxCoord(csvFile);
+  const maxCoord = MaxCoord(csvFilePlanetsWithAlliance);
+
   // Génération de la grille
   const grid = RenderGrid(data, maxCoord, tagColorsEnabled, handlePlanetClick);
 
