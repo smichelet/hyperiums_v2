@@ -1,7 +1,0 @@
-# Generated: 2023-03-28 07:05:01
-#> ID - name - gov. system - x - y - race (0:human,1:azterk,2:xillor) - prod.type (0:agro,1:minero,2:techno) - activity - public tag - civ. level - planet size - SC
-4759 Neutral-14-1L 1 -9 7 2 0 15062 [] 1 1 1
-5027 Neutral-1O7-X 1 -9 7 0 1 15012 [] 1 4 1
-4842 Requiem 2 -30 -3 0 1 25912 [-] 14 1 1
-5009 Neutral-3K1-3 1 -30 -4 0 0 15046 [] 1 1 1
-5009 blabla3 1 6 22 0 0 15046 [] 1 1 1
