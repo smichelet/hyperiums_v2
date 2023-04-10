@@ -11,7 +11,7 @@ export function RenderGrid(data, maxCoord, tagColorsEnabled, handlePlanetClick) 
 
         const cell = (
           <td key={`${x},${y}`}>
-            <tr><b>({x}, {y})</b></tr>
+            <th>({x}, {y})</th>
             {data[x][y].map(planet => {
               const tagColor = GetTagColor(planet.tag, tagColorsEnabled);
               return(
