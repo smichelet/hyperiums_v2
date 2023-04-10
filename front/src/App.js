@@ -40,28 +40,28 @@ function App() {
       </div>
       <div className="content" style={{ display: 'flex', flexDirection: 'row' }}>
         <div className="grid" style={{ maxWidth: '90%', overflow: 'auto', padding: "10px" }}>
-            <TransformWrapper
-              doubleClick={{disabled: true}}
-              initialPositionX={-1586}
-              initialPositionY={-2390}
-              limitToBounds={false}
-              initialScale={0.75}
-              minPositionX={1}
-              maxPositionX={6571}
-              minPositionY={1}
-              maxPositionY={7514}
-              minScale={0.2}
-              maxScale={4}
-            >
-              <TransformComponent>
-                <table>
-                  {grid}
-                </table>
-              </TransformComponent>
-            </TransformWrapper>
+          <TransformWrapper
+            doubleClick={{disabled: true}}
+            initialPositionX={-1586}
+            initialPositionY={-2390}
+            limitToBounds={false}
+            initialScale={0.75}
+            minPositionX={1}
+            maxPositionX={6571}
+            minPositionY={1}
+            maxPositionY={7514}
+            minScale={0.2}
+            maxScale={4}
+          >
+            <TransformComponent>
+              <table>
+                {grid}
+              </table>
+            </TransformComponent>
+          </TransformWrapper>
         </div>
         <div className="planetDetails" style={{ maxWidth: '10%', padding: "10px" }}>
-            <PlanetDetails planet={selectedPlanet} />
+          <PlanetDetails planet={selectedPlanet} />
         </div>
       </div>
     </div>
