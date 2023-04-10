@@ -14,8 +14,8 @@ import './App.css'
 
 function App() {
   // Définition des variables pour sélectionner les fichiers locaux en tant que source de données
-  const fileNamePlanets = './planets.txt';
-  const fileNamePlanetsAlliance = './planetsAlliance.txt';
+  const fileNamePlanets = './data/planets.txt';
+  const fileNamePlanetsAlliance = './data/planetsAlliance.txt';
 
   // Définition d'une variable pour la fonction d'affichage d'une couleur de background pour les tags
   const [tagColorsEnabled, setTagColorsEnabled] = useState(true);
