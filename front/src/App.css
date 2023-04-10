@@ -6,9 +6,14 @@ html {
   color: "#000000";
 }
 
-.topButtons {
+.top {
   margin-bottom: 30px;
-  text-align: center
+  text-align: center;
+}
+
+.grid {
+  float: left;
+  clear: none;
 }
 
 .button {

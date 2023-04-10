@@ -1,6 +1,6 @@
 import { GetTagColor } from './getTagColor';
 
-export function RenderGrid(data, maxCoord, tagColorsEnabled) {
+export function RenderGrid(data, maxCoord, tagColorsEnabled, handlePlanetClick) {
   const grid = [];
 
   for (let y = maxCoord; y >= -maxCoord; y--) {
@@ -15,10 +15,9 @@ export function RenderGrid(data, maxCoord, tagColorsEnabled) {
             {data[x][y].map(planet => {
               const tagColor = GetTagColor(planet.tag, tagColorsEnabled);
               return(
-              <div key={planet.name} style={{ backgroundColor: tagColor }}>
-                <p style={{marginBlockStart: "0px", marginBlockEnd: "0px"}}>{planet.name}</p>
-                {/* Ajoutez ici les autres informations de la planète */}
-              </div>
+                <div key={planet.name} onClick={() => handlePlanetClick(planet)} style={{ backgroundColor: tagColor }}>
+                  <p style={{ marginBlockStart: "0px", marginBlockEnd: "0px" }}>{planet.name}</p>
+                </div>
               );
             })}
           </td>
