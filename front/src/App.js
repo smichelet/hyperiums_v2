@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FormatData } from './components/formatData';
 import { FormatToCSV } from './components/formatToCSV';
@@ -8,9 +8,13 @@ import { RenderGrid } from './components/renderGrid';
 
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
-const fileName = './planetsFull.txt';
+import './App.css'
 
 function App() {
+  // Définition de variables
+  const fileName = './planetsFull.txt';
+  const [tagColorsEnabled, setTagColorsEnabled] = useState(true);
+
   // Appel de la fonction pour lire le fichier local  
   const file = ReadFile(fileName);
   // Appel de la fonction pour formatter le fichier au format CSV
@@ -20,10 +24,15 @@ function App() {
   // Appel de la fonction pour avoir la coordonnée maximale
   const maxCoord = MaxCoord(csvFile);
   // Génération de la grille
-  const grid = RenderGrid(data, maxCoord);
+  const grid = RenderGrid(data, maxCoord, tagColorsEnabled);
 
   return(
     <div>
+      <div className="topButtons">
+        <button className="button" onClick={() => setTagColorsEnabled(!tagColorsEnabled)}>
+          {tagColorsEnabled ? 'Disable' : 'Enable'} Tag Colors
+        </button>
+      </div>
       <div>
         <TransformWrapper
           initialPositionX={-1586}
