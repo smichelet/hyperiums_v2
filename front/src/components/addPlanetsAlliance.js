@@ -30,7 +30,6 @@ export function AddPlanetsAlliance(filePlanetsAlliance, csvFilePlanets) {
   
   // Rejoindre les lignes du tableau en une chaîne de caractères
   let updatedPlanetsData = planetsArray.join("\n");
-  
-  console.log(updatedPlanetsData);
+
   return(updatedPlanetsData);
 }
