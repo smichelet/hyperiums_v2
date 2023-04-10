@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FormatData } from './components/formatData';
 import { FormatToCSV } from './components/formatToCSV';
 import { MaxCoord } from './components/maxCoord';
+import { PlanetInfo } from './components/planetInfo';
 import { ReadFile } from './components/readFile';
 import { RenderGrid } from './components/renderGrid';
 
@@ -35,6 +36,7 @@ function App() {
       </div>
       <div>
         <TransformWrapper
+          doubleClick={{disabled: true}}
           initialPositionX={-1586}
           initialPositionY={-2390}
           limitToBounds={false}
