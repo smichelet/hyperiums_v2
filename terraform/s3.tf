@@ -5,10 +5,10 @@ module "s3_hyperiums" {
   bucket = var.s3_bucket_name_hyperiums
   acl    = "private"
 
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 
   server_side_encryption_configuration = {
     rule = {

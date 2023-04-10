@@ -12,6 +12,10 @@ package-lock.json
 # production
 */build
 
+# terraform
+*/.terraform.lock.hcl
+*/.terraform/
+
 # misc
 .DS_Store
 .env.local
