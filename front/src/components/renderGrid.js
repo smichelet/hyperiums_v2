@@ -6,12 +6,13 @@ export function RenderGrid(data, maxCoord) {
 
     for (let x = -maxCoord; x <= maxCoord; x++) {
       if (data[x] && data[x][y]) {
+
         const cell = (
-          <td key={`${x},${y}`} style={{height: '10px', width: '10px'}}>
+          <td key={`${x},${y}`}>
             <tr>({x}, {y})</tr>
             {data[x][y].map(planet => (
               <div key={planet.name}>
-                <p>{planet.name} {planet.tag}</p>
+                <p style={{marginBlockStart: "0px", marginBlockEnd: "0px"}}>{planet.name}</p>
                 {/* Ajoutez ici les autres informations de la planète */}
               </div>
             ))}
