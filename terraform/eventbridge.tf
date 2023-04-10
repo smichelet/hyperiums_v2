@@ -9,7 +9,7 @@ module "eventbridge_hyperiums_getData" {
   rules = {
     hyperiums_getData = {
       description         = "hyperiums_getData rule"
-      schedule_expression = "cron(25 21 * * ? *)"
+      schedule_expression = "cron(30 8 * * ? *)"
       enabled             = true
     }
   }

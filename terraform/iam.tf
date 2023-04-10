@@ -35,11 +35,29 @@ resource "aws_iam_role_policy" "lambda_hyperiums_getData" {
       {
         Action = [
         "s3:PutObject",
+        "s3:PutObjectAcl",
         "s3:GetObject",
         "s3:DeleteObject"
         ]
         Effect   = "Allow"
         Resource = "${module.s3_hyperiums.s3_bucket_arn}/data/*"
+      },
+      {
+        Action = [
+          "logs:CreateLogGroup",
+        ]
+        Effect   = "Allow",
+        Resource = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:*"
+      },
+      {
+        Action = [
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        Effect   = "Allow",
+        Resource = [
+          "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${var.lambda_function_name_hyperiums}:*"
+        ]
       },
       {
         Action = [

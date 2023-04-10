@@ -16,7 +16,7 @@ resource "aws_lambda_function" "hyperiums_getData" {
   description      = "Lambda function to get daily data from Hyperiums and push it to our S3 bucket"
   handler          = "${var.lambda_function_name_hyperiums}.handler"
   memory_size      = 128
-  timeout          = 3
+  timeout          = 15
 
   tags = {
     Name = var.lambda_function_name_hyperiums

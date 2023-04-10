@@ -27,10 +27,17 @@ async function handler(event, context) {
     const unzippedBuffer = zlib.gunzipSync(downloadResponseBuffer);
 
     // Envoie le résultat sur S3
-    await s3.putObject({
+    const s3Response = await s3.putObject({
       Bucket: bucketName,
       Key: objectKey,
       Body: unzippedBuffer
+    });
+
+    // Met l'ACL de l'objet S3 en public
+    await s3.putObjectAcl({
+      Bucket: bucketName,
+      Key: objectKey,
+      ACL: 'public-read'
     });
 
     console.log(`File ${objectKey} uploaded to bucket ${bucketName}`);
