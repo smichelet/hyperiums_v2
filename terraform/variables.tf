@@ -5,7 +5,6 @@ variable "region" {
 }
 
 variable "hyperiums_password" {
-  default     = "dM8K@mLyM_jk"
   description = "Hyperiums password"
   type        = string
 }
