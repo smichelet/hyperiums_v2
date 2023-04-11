@@ -17,6 +17,9 @@ function App() {
   const fileNamePlanets = './data/planets.txt';
   const fileNamePlanetsAlliance = './data/planetsAlliance.txt';
 
+  // Définition d'une variable pour la fonction d'affichage d'une couleur de background pour les planètes hyp
+  const [hypHighlightEnabled, setHypHighlightEnabled] = useState(false);
+
   // Définition d'une variable pour la fonction d'affichage d'une couleur de background pour les tags
   const [tagColorsEnabled, setTagColorsEnabled] = useState(true);
   
@@ -43,11 +46,14 @@ function App() {
   const maxCoord = MaxCoord(csvFilePlanetsWithAlliance);
 
   // Génération de la grille
-  const grid = RenderGrid(data, maxCoord, tagColorsEnabled, handlePlanetClick);
+  const grid = RenderGrid(data, maxCoord, hypHighlightEnabled, tagColorsEnabled, handlePlanetClick);
 
   return(
     <div>
       <div className="top">
+        <button className="button" onClick={() => setHypHighlightEnabled(!hypHighlightEnabled)}>
+          {tagColorsEnabled ? 'Enable' : 'Disable'} Hyp Display
+        </button>
         <button className="button" onClick={() => setTagColorsEnabled(!tagColorsEnabled)}>
           {tagColorsEnabled ? 'Disable' : 'Enable'} Tag Colors
         </button>
