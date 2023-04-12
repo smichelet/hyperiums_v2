@@ -20,7 +20,7 @@ export function GetTagColor(tag, tagColorsEnabled) {
       case "[X/0]":
         return "#145a32";
       case "[KoV]":
-        return "#B499CB";
+        return "#FAF99B";
       case "[Dark]":
         return "#42BF88";
       case "[d_b]":

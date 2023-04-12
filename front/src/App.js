@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { AddPlanetsAlliance } from './components/addPlanetsAlliance';
 import { FormatData } from './components/formatData';
 import { FormatToCSV } from './components/formatToCSV';
+// import { Legend } from './components/legend';
 import { MaxCoord } from './components/maxCoord';
 import { PlanetDetails } from './components/planetDetails';
 import { ReadFile } from './components/readFile';
@@ -48,11 +49,14 @@ function App() {
   // Génération de la grille
   const grid = RenderGrid(data, maxCoord, hypHighlightEnabled, tagColorsEnabled, handlePlanetClick);
 
+  // Appel de la fonction qui génère la légende
+  // const legend = Legend();
+
   return(
     <div>
       <div className="top">
         <button className="button" onClick={() => setHypHighlightEnabled(!hypHighlightEnabled)}>
-          {tagColorsEnabled ? 'Enable' : 'Disable'} Hyp Display
+          {!hypHighlightEnabled ? 'Enable' : 'Disable'} Hyp Display
         </button>
         <button className="button" onClick={() => setTagColorsEnabled(!tagColorsEnabled)}>
           {tagColorsEnabled ? 'Disable' : 'Enable'} Tag Colors
@@ -80,8 +84,13 @@ function App() {
             </TransformComponent>
           </TransformWrapper>
         </div>
-        <div className="planetDetails" style={{ maxWidth: '10%', padding: "10px" }}>
-          <PlanetDetails planet={selectedPlanet} />
+        <div>
+          <div className="planetDetails" style={{ maxWidth: '10%', padding: "10px" }}>
+            <PlanetDetails planet={selectedPlanet} />
+          </div>
+          <div>
+            {/* {legend} */}
+          </div>
         </div>
       </div>
     </div>
