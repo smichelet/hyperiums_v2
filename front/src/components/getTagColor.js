@@ -2,11 +2,11 @@ export function GetTagColor(tag, tagColorsEnabled) {
   if (tagColorsEnabled) {
     switch (tag) {
       case "[PASTA]":
-        return "orange";
+        return "#93935C";
       case "[Cake]":
         return "pink";
       case "[TAG]":
-        return "red";
+        return "#117a65";
       case "[GoD]":
         return "lightblue";
       case "[MNKY]":
@@ -18,7 +18,15 @@ export function GetTagColor(tag, tagColorsEnabled) {
       case "[T3M]":
         return "orange";      
       case "[X/0]":
-        return "yellow";
+        return "#145a32";
+      case "[KoV]":
+        return "#B499CB";
+      case "[Dark]":
+        return "#42BF88";
+      case "[d_b]":
+        return "#B05273";
+      case "[o.O]":
+        return "#BB8FCE";
       case "[8]":
         return "lightgreen";
       // Ajoutez ici d'autres cas pour d'autres tags
