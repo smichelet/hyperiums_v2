@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AddPlanetsAlliance } from './components/addPlanetsAlliance';
 import { FormatData } from './components/formatData';
 import { FormatToCSV } from './components/formatToCSV';
-// import { Legend } from './components/legend';
+import { Legend } from './components/legend';
 import { MaxCoord } from './components/maxCoord';
 import { PlanetDetails } from './components/planetDetails';
 import { ReadFile } from './components/readFile';
@@ -50,7 +50,7 @@ function App() {
   const grid = RenderGrid(data, maxCoord, hypHighlightEnabled, tagColorsEnabled, handlePlanetClick);
 
   // Appel de la fonction qui génère la légende
-  // const legend = Legend();
+  const legend = Legend();
 
   return(
     <div>
@@ -85,11 +85,11 @@ function App() {
           </TransformWrapper>
         </div>
         <div>
-          <div className="planetDetails" style={{ maxWidth: '10%', padding: "10px" }}>
-            <PlanetDetails planet={selectedPlanet} />
+          <div style={{ padding: "10px" }}>
+            {legend}
           </div>
-          <div>
-            {/* {legend} */}
+          <div className="planetDetails" style={{ maxWidth: "10%", padding: "10px" }}>
+            <PlanetDetails planet={selectedPlanet} />
           </div>
         </div>
       </div>

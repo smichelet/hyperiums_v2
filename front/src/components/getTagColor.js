@@ -14,13 +14,13 @@ export function GetTagColor(tag, tagColorsEnabled) {
       case "[-]":
         return "violet";
       case "[666]":
-        return "darkgreen";
+        return "#ff1493";
       case "[T3M]":
         return "orange";      
       case "[X/0]":
-        return "#145a32";
+        return "#2986cc";
       case "[KoV]":
-        return "#FAF99B";
+        return "#ffe599";
       case "[Dark]":
         return "#42BF88";
       case "[d_b]":
