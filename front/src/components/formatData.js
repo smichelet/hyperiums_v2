@@ -26,13 +26,13 @@ export function FormatData(csvFile) {
   // Créer un objet avec les coordonnées x puis y comme clés
   const planetObject = {};
   planetArray.forEach((planet) => {
-    if (!planetObject[planet.x]) {
-      planetObject[planet.x] = {};
-    }
-    if (!planetObject[planet.x][planet.y]) {
-      planetObject[planet.x][planet.y] = [];
-    }
     if (planet.sc == 1) {
+      if (!planetObject[planet.x]) {
+        planetObject[planet.x] = {};
+      }
+      if (!planetObject[planet.x][planet.y]) {
+        planetObject[planet.x][planet.y] = [];
+      }
       planetObject[planet.x][planet.y].push(planet);
     }
   });

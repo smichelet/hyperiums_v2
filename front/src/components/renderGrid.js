@@ -11,7 +11,7 @@ export function RenderGrid(data, maxCoord, hypHighlightEnabled, tagColorsEnabled
       if (data[x] && data[x][y]) {
 
         const cell = (
-          <td style={{ padding: "5px", border: "solid black 1px" }} key={`${x},${y}`}>
+          <td style={{ verticalAlign: "top", padding: "5px", border: "solid black 1px" }} key={`${x},${y}`}>
             <th>({x}, {y})</th>
             {data[x][y].map(planet => {
               const hypFontWeight = GetHypHighlight(planet.govsystem, hypHighlightEnabled);
