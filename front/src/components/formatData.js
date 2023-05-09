@@ -10,6 +10,8 @@ export function FormatData(csvFile) {
     activity: parseInt(planet[7]),
     tag: planet[8],
     civlevel: parseInt(planet[9]),
+    planetsize: parseInt(planet[10]),
+    sc: parseInt(planet[11]),
   }));
   
   // Tri des planètes par coordonnées x puis y
