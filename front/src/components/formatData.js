@@ -32,7 +32,9 @@ export function FormatData(csvFile) {
     if (!planetObject[planet.x][planet.y]) {
       planetObject[planet.x][planet.y] = [];
     }
-    planetObject[planet.x][planet.y].push(planet);
+    if (planet.sc == 1) {
+      planetObject[planet.x][planet.y].push(planet);
+    }
   });
 
   return planetObject;

@@ -18,7 +18,7 @@ export function RenderGrid(data, maxCoord, hypHighlightEnabled, tagColorsEnabled
               const tagColor = GetTagColor(planet.tag, tagColorsEnabled);
               return(
                 <div key={planet.name} onClick={() => handlePlanetClick(planet)} style={{ backgroundColor: tagColor, whiteSpace: "nowrap" }}>
-                  <td style={{ border: hypFontWeight }}>{planet.name} <b>SC{planet.sc}</b></td>
+                  <td style={{ border: hypFontWeight }}>{planet.name}</td>
                 </div>
               );
             })}
